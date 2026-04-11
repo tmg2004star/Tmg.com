@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ================= SEO META TAGS ================= -->
+    <title>TMG Platforms and technologies</title>
+    <meta name="description" content="TMG Platform is a technology company founded by Trust Erastus and Magreth Mageka. We develop innovative, accessible software solutions like Smart Janja to empower businesses and communities.">
+    <meta name="keywords" content="TMG Platform ,Tmg.com , meta, Smart Janja, Trust Erastus, Magreth Mageka, Tanzania Tech Company, Software Solutions, SME Software, Point of Sale, Inventory Management">
+    <meta name="author" content="TMG Platform">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Media (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TMG Platform | Innovative Software Solutions">
+    <meta property="og:description" content="Empowering businesses with smart, efficient, and user-friendly technological tools like Smart Janja.">
+    <meta property="og:image" content="Captureff.jpg">
+    <meta property="og:url" content="https://tmg.com">
+    
+    <!-- ================= FONTS & ICONS ================= -->
+    <link rel="icon" type="image/svg+xml" sizes="512x512"  href="Gemini_Generated_Image_qp0refqp0refqp0r-removebg-preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ================= TAILWIND CSS ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        tmg: {
+                            light: '#00A0E3',
+                            DEFAULT: '#00529B',
+                            dark: '#003366',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ================= CUSTOM CSS FOR PREMIUM EFFECTS ================= -->
+    <style>
+        /* Premium Gradient Animation for Hero Section */
+        .hero-gradient {
+            background: linear-gradient(-45deg, #001f3f, #00529B, #00A0E3, #003366);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Glassmorphism */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hover floating effect */
+        .float-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .float-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px -12px rgba(0, 82, 155, 0.15);
+        }
+
+        /* Image Premium Shadow */
+        .premium-shadow {
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.2), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased bg-gray-50 selection:bg-tmg selection:text-white">
+
+    <!-- ================= NAVIGATION ================= -->
+    <header class="fixed w-full top-0 z-50 glass-nav transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="flex items-center gap-3">
+                        <img src="loga.PNG" alt="TMG Platform Logo" class="h-16 w-auto object-contain">
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-10 items-center">
+                    <a href="#about" class="text-gray-600 hover:text-tmg font-medium transition-colors">About Us</a>
+                    <a href="#smart-janja" class="text-gray-600 hover:text-tmg font-medium transition-colors">Smart Janja</a>
+                    <a href="#founders" class="text-gray-600 hover:text-tmg font-medium transition-colors">Founders</a>
+                    <a href="#contact" class="bg-tmg hover:bg-tmg-dark text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg">Contact Us</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-tmg focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2 shadow-xl">
+                <a href="#about" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-tmg hover:bg-blue-50 rounded-md">About Us</a>
+                <a href="#smart-janja" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-tmg hover:bg-blue-50 rounded-md">Smart Janja</a>
+                <a href="#founders" class="block px-3 py-3 text-base font-medium text-gray-700 hover:text-tmg hover:bg-blue-50 rounded-md">Founders</a>
+                <a href="#contact" class="block px-3 py-3 mt-4 text-center text-base font-medium bg-tmg text-white rounded-md shadow-md">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden hero-gradient">
+        <!-- Abstract overlay shapes -->
+        <div class="absolute inset-0 opacity-20">
+            <svg class="absolute left-0 top-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grid-pattern)"></path>
+            </svg>
+            <defs>
+                <pattern id="grid-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+                    <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                </pattern>
+            </defs>
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-sm font-semibold tracking-wider mb-6 uppercase">
+                Est. 2025
+            </span>
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight mb-8 leading-tight">
+                Empowering Communities Through <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-white">Innovative Technology</span>
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-xl lg:text-2xl text-blue-100 font-light leading-relaxed mb-10">
+                We build digital systems that simplify processes and increase productivity for businesses, organizations, and individuals.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#smart-janja" class="bg-white text-tmg hover:bg-gray-50 px-8 py-4 rounded-full font-semibold text-lg transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+                    Discover Smart Janja
+                </a>
+                <a href="#about" class="bg-transparent border border-white/50 text-white hover:bg-white/10 px-8 py-4 rounded-full font-semibold text-lg transition-all backdrop-blur-sm">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-tmg font-semibold tracking-wide uppercase text-sm mb-3">Who We Are</h2>
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                        Addressing real-life challenges through accessible technology.
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        TMG Platform is a technology company founded in 2025. Our core focus is on developing innovative software solutions that address real-life challenges within communities through accessible and affordable technology.
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed border-l-4 border-tmg pl-4 italic">
+                        "TMG is dedicated to building digital systems that empower businesses, organizations, and individuals to improve their daily operations."
+                    </p>
+                </div>
+                
+                <!-- Stats / Visual representation -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-8 rounded-2xl float-hover border border-gray-100">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-lightbulb text-tmg text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Innovation</h4>
+                        <p class="text-gray-600">Smart, forward-thinking solutions for modern problems.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl float-hover border border-gray-100 mt-8">
+                        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                            <i class="fas fa-hands-helping text-tmg text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-2">Empowerment</h4>
+                        <p class="text-gray-600">Equipping communities with tools to grow and succeed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SMART JANJA SECTION ================= -->
+    <section id="smart-janja" class="py-24 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-tmg text-sm font-semibold tracking-wider mb-4 uppercase">
+                    Our Flagship Product
+                </span>
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Meet <span class="text-tmg">Smart Janja</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    A software solution designed specifically for small and medium-sized businesses. Smart Janja is built with simplicity in mind, making it easy to use even for users with little or no technical experience.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl float-hover shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fas fa-cash-register text-4xl text-tmg mb-6"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Record Sales</h3>
+                        <p class="text-gray-600">Easily record daily sales with a user-friendly interface designed for local shop owners.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl float-hover shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fas fa-boxes text-4xl text-tmg mb-6"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Manage Stock</h3>
+                        <p class="text-gray-600">Automatically manage your inventory and know exactly what you have in stock at all times.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl float-hover shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fas fa-file-invoice-dollar text-4xl text-tmg mb-6"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Instant Reports</h3>
+                        <p class="text-gray-600">Generate comprehensive business reports instantly to understand your financial health.</p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white p-8 rounded-2xl float-hover shadow-sm border border-gray-100 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 -mt-4 -mr-4 w-24 h-24 bg-blue-50 rounded-full z-0 group-hover:scale-150 transition-transform duration-500"></div>
+                    <div class="relative z-10">
+                        <i class="fas fa-chart-pie text-4xl text-tmg mb-6"></i>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Track Performance</h3>
+                        <p class="text-gray-600">Track business performance in real time to make informed decisions and increase profitability.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to action inside product -->
+            <div class="mt-16 bg-tmg rounded-3xl p-10 lg:p-16 flex flex-col lg:flex-row items-center justify-between text-white relative overflow-hidden premium-shadow">
+                <div class="absolute right-0 bottom-0 opacity-10">
+                    <i class="fas fa-chart-line text-9xl -mb-10 -mr-10"></i>
+                </div>
+                <div class="relative z-10 max-w-2xl text-center lg:text-left mb-8 lg:mb-0">
+                    <h3 class="font-heading text-3xl font-bold mb-4">Empowering your business growth</h3>
+                    <p class="text-blue-100 text-lg">The goal of Smart Janja is to empower business owners to manage operations professionally with minimal cost.</p>
+                </div>
+                <div class="relative z-10">
+                    <a href="https://tmg2004star.github.io/Smart-Janja-app/" class="inline-block bg-white text-tmg hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition-transform hover:-translate-y-1 shadow-lg">
+                        Get Smart Janja
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOUNDERS SECTION ================= -->
+    <section id="founders" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-tmg font-semibold tracking-wide uppercase text-sm mb-3">Leadership & Core Team</h2>
+                <h3 class="font-heading text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h3>
+                <p class="text-lg text-gray-600">
+                    The brilliant minds and experts behind TMG Platform, dedicated to transforming communities through technology.
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-12 lg:gap-24 mb-20">
+                
+                <!-- Founder 1: Trust Erastus -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden mb-6 premium-shadow relative">
+                        <img src="Gemini_Generated_Image_1ks0hp1ks0hp1ks0.png" alt="Trust Erastus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <div class="flex gap-4 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-2xl font-bold text-gray-900">Trust Erastus</h4>
+                    <p class="text-tmg font-medium mb-4">Founder & CEO</p>
+                    <p class="text-center text-gray-600 max-w-xs">Driving technological innovation to create accessible solutions for everyday business challenges.</p>
+                </div>
+
+                <!-- Founder 2: Magreth Mageka -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-64 h-64 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden mb-6 premium-shadow relative">
+                        <img src="Gemini_Generated_Image_9au7ez9au7ez9au7.png" alt="Magreth Mageka" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                            <div class="flex gap-4 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-2xl font-bold text-gray-900">Magreth Mageka</h4>
+                    <p class="text-tmg font-medium mb-4">Founder & COO</p>
+                    <p class="text-center text-gray-600 max-w-xs">Passionate about empowering small-scale traders and bringing digital systems to the grassroots level.</p>
+                </div>
+
+            </div>
+
+            <!-- Core Team Members -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Team Member 1: Shaban Athuman -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-[2rem] overflow-hidden mb-6 premium-shadow relative">
+                        <img src="Gemini_Generated_Image_b8r4cwb8r4cwb8r4.jpg" alt="Shaban Athuman" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <div class="flex gap-3 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-gray-900">Shaban Athuman</h4>
+                    <p class="text-tmg font-medium mb-2">Finance Manager</p>
+                </div>
+
+                <!-- Team Member 2: Justice Erastus -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-[2rem] overflow-hidden mb-6 premium-shadow relative">
+                        <img src="Gemini_Generated_Image_ysl4qiysl4qiysl4.png" alt="Justice Erastus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <div class="flex gap-3 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-gray-900">Justice Erastus</h4>
+                    <p class="text-tmg font-medium mb-2">Business Development</p>
+                </div>
+
+                <!-- Team Member 3: Daniel Kasongi -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-[2rem] overflow-hidden mb-6 premium-shadow relative">
+                        <img src="Capturehh.PNG" alt="Daniel Kasongi" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <div class="flex gap-3 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-gray-900">Daniel Kasongi</h4>
+                    <p class="text-tmg font-medium mb-2">Advisor Strategy</p>
+                </div>
+
+                <!-- Team Member 4: Saiven Steven -->
+                <div class="flex flex-col items-center group">
+                    <div class="w-48 h-48 lg:w-56 lg:h-56 rounded-[2rem] overflow-hidden mb-6 premium-shadow bg-blue-50 flex items-center justify-center relative">
+                      <img src="Gemini_Generated_Image_b8r4cwb8r4cwb8r4.png" alt="Saiven Steven" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                       
+                        <div class="absolute inset-0 bg-gradient-to-t from-tmg-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                            <div class="flex gap-3 text-white">
+                                <a href="#" class="hover:text-blue-300 transition-colors"><i class="fab fa-linkedin text-lg"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-heading text-xl font-bold text-gray-900">Saiven Steven</h4>
+                    <p class="text-tmg font-medium mb-2">Developer Lead</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-gray-900 pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand -->
+                <div class="md:col-span-5">
+                    <img src="Gemini_Generated_Image_qp0refqp0refqp0r-removebg-preview.png" alt="TMG Platform" class="h-16 bg-white p-2 rounded-lg mb-6 object-contain">
+                    <p class="text-gray-400 text-lg pr-4 mb-8">
+                        Developing innovative software solutions that address real-life challenges within communities through accessible and affordable technology.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-tmg hover:text-white transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-tmg hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-tmg hover:text-white transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-tmg hover:text-white transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#smart-janja" class="text-gray-400 hover:text-white transition-colors">Smart Janja</a></li>
+                        <li><a href="#founders" class="text-gray-400 hover:text-white transition-colors">Founders</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-4">
+                    <h4 class="text-white font-bold text-lg mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-tmg mt-1 mr-3"></i>
+                            <span class="text-gray-400">Dar es Salaam, Tanzania</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-tmg mr-3"></i>
+                            <a href="mailto:trusterastus@gmail.com" class="text-gray-400 hover:text-white transition-colors">trusterastus@gmail.com</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-tmg mt-1 mr-3"></i>
+                            <div class="flex flex-col space-y-1">
+                                <a href="tel:+255786701705" class="text-gray-400 hover:text-white transition-colors">+255 786 701 705</a>
+                                <a href="tel:+255623509930" class="text-gray-400 hover:text-white transition-colors">+255 623 509 930</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">
+                    &copy; 2026 TMG Platform. All rights reserved.
+                </p>
+                <div class="flex space-x-6 text-sm text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Navbar Glass Effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+                header.classList.remove('py-2');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
